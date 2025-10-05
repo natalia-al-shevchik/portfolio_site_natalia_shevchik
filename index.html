@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natalia Shevchik - Portfolio Website</title>
+</head>
+<body>
+  <header>
+    <div>
+    <nav aria-label="Main navigation">
+      <ul>
+    <li><a href="index.html">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+    </nav></div>
+  </header>  
+  <main>
+    <div>
+      <div aria-labelledby="intro-heading">
+      <h1 id="intro-heading">Hi, I'm Natalia Shevchik</h1>
+      <span>Nice that you're here!</span>
+      <picture>
+        <source srcset="./images/portrait-small.jpg" media="(max-width: 767px)">
+        <source srcset="./images/portrait-medium.jpg" media="(max-width: 1199px)">
+        <img src="./images/portrait-large.jpg" alt="Portrait of Natalia Shevchik" loading="lazy" width="500" height="auto">
+      </picture></div>
+      <p>I am a Düsseldorf-based UX/UI designer focused on creating accessible, user-centered digital experiences.</p>
+    </div>
+  </main>
+  <main>
+    <div aria-labelledby="projects-heading">
+      <h2 id="projects-heading">My Projects</h2></div>
+    
+
+  <div class="projects-row">
+    <!-- Project 1 (column) -->
+    <div class="project">
+      <picture>
+  <source srcset="./images/habitree/habitree_cover-small.jpg" media="(max-width: 767px)">
+  <source srcset="./images/habitree/habitree_cover-medium.jpg" media="(max-width: 1199px)">
+  <img src="./images/habitree/habitree_cover-large.jpg" alt="Habitree app preview" loading="lazy">
+</picture>
+
+      <h3>Habitree – Native Habit-Tracker App</h3>
+      <p class="tools"><strong>Tools:</strong> Figma, FigJam, Miro, Google Forms, Canva</p>
+
+      <p class="intro">
+        I created user flows, designed and iterated on onboarding, home, habit details,
+        and progress screens; developed a consistent visual language and tested a functional prototype.
+      </p>
+
+      <a href="habitree.html" class="btn" role="button" aria-label="View Habitree project">View Project</a>
+    </div>
+
+    <!-- Project 2 (column) -->
+    <div class="project">
+      <picture>
+  <source srcset="./images/rego/rego_cover-small.jpg" media="(max-width: 767px)">
+  <source srcset="./images/rego/rego_cover-medium.jpg" media="(max-width: 1199px)">
+  <img src="./images/rego/rego_cover-large.jpg" alt="ReGo Market app preview" loading="lazy">
+</picture>
+
+      <h3>ReGo Market – Second-Hand Online Store</h3>
+      <p class="tools"><strong>Tools:</strong> Figma, Miro, Canva, Otter AI Note-taker</p>
+
+      <p class="intro">
+        I created low-fi → mid-fi → hi-fi wireframes and iterated after usability testing;
+        designed responsive layouts and built a consistent design system.
+      </p>
+
+      <a href="#" class="btn" role="button" aria-label="View ReGo Market project">View Project</a>
+    </div>
+  </div>
+
+  </main>
+  <footer id="contact">
+    <h2>Get in touch</h2>
+    <div><p>If you’d like to connect, collaborate, or just chat about design — feel free to reach out! Call: <a href="tel:+4916091083159">+49 16091083159</a></p></div>
+   <div><a href="https://www.linkedin.com/in/natalia-shevchik" target="_blank" rel="noopener noreferrer" aria-label="Visit my LinkedIn profile">
+    <img src="./Icon/LinkedIn.svg" alt="LinkedIn icon" width="48" height="48">
+  </a>
+    <a href="https://www.behance.net/nataliashevchik_uxui" target="_blank" rel="noopener noreferrer" aria-label="Visit my Behance profile">
+    <img src="./Icon/Behance.svg" alt="Behance icon" width="48" height="48">
+  </a>
+     <a href="https://dribbble.com/Natalia_Shevchik" target="_blank" rel="noopener noreferrer" aria-label="Visit my Dribbble profile">
+    <img src="./Icon/Dribble.svg" alt="Dribbble icon" width="48" height="48">
+  </a></div>
+    <div><a href="#" role="button" aria-label="Send Email">Send Email</a></div>
+    <div><p>Copyright Natalia Shevchik 2025</p></div>
+  </footer>
+</body>
+</html>
