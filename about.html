@@ -1,99 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natalia Shevchik - Portfolio Website</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About — Natalia Shevchik</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <div>
-    <nav aria-label="Main navigation">
-      <img src="./images/Logo1_L.png" alt="Logo Natalia Shevchik UI/UX designer" width="80" height="auto">
-      <ul>
-        <li><a href="index.html">Work</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav></div>
-  </header>  
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo header-logo">
+        <a href="index.html"><img src="./images/Logo1_S.svg" alt="Natalia Shevchik logo"></a>
+      </div>
+
+      <nav class="nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
   <main>
-      <div aria-labelledby="intro-heading">
-      <picture>
-        <source srcset="./images/website_photo@2x.jpg" media="(max-width:767px)">
-        <img src="./images/website_photo@2x.jpg" alt="Photo of Natalia Shevchik">
-      </picture>
-      <picture>
-        <source srcset="./images/Logo1 L.png" media="(max-width:767px)">
-        <img src="./images/Logo1 L.png" alt="Logo Natalia Shevchik UI/UX designer">
-      </picture>
+    <section class="about-hero">
+      <div id="about-photo">
+        <picture>
+          <source srcset="./images/website_photo@2x.jpg" media="(max-width:767px)">
+          <img src="./images/website_photo@2x.jpg" alt="Photo of Natalia Shevchik" loading="lazy">
+        </picture>
+      </div>
+
+      <div id="about-logo">
+        <picture>
+          <source srcset="./images/Logo1_L.png" media="(max-width:767px)">
+          <img src="./images/Logo1_L.png" alt="Natalia Shevchik logo">
+        </picture>
+      </div>
+    </section>
+
+    <section id="about-section" class="site-width section" aria-labelledby="about-heading">
+      <h1 id="about-heading">My Story</h1>
+      <p>Hi, I’m Natalia, a Düsseldorf-based UX/UI designer focused on creating accessible, user-centered digital experiences. Skilled in visual design, prototyping, usability testing, and design systems using tools like Figma, Miro, and Canva. I recently completed CareerFoundry’s UI Design Program, where I delivered end-to-end projects across wellness, lifestyle, e-commerce, productivity, and entertainment.</p>
+
+      <p>With a background in education, I bring strong collaboration, presentation, and problem-solving skills that help me communicate clearly with both users and cross-functional teams. I am now starting a specialisation in Frontend Development for Designers, bridging design and development to build even stronger digital solutions.</p>
+
+      <p>I am fluent in English, German, Spanish, French and Russian, which allows me to thrive in a multi-national environment.</p>
+    </section>
+
+    <div id="skills-tools-wrapper" class="site-width">
+      <section id="skills-section" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Skills</h2>
+        <ul id="skills-list">
+          <li>UX/UI Design</li>
+          <li>Design Systems</li>
+          <li>Prototyping</li>
+          <li>Wireframing</li>
+          <li>Accessibility</li>
+          <li>Visual Design</li>
+          <li>User Research</li>
+          <li>Usability Testing</li>
+          <li>HTML/CSS basics</li>
+        </ul>
+      </section>
+
+      <section id="tools-section" aria-labelledby="tools-heading">
+        <h2 id="tools-heading">Tools</h2>
+        <ul id="tools-list">
+          <li>Figma</li>
+          <li>FigJam</li>
+          <li>Miro</li>
+          <li>Balsamiq</li>
+          <li>Lyssna</li>
+          <li>Maze</li>
+          <li>Canva</li>
+          <li>Notion</li>
+          <li>VS Code</li>
+        </ul>
+      </section>
+    </div>
+
+    <div id="cv-button" class="site-width" style="text-align:center">
+      <a href="./files/Natalia_Shevchik_CV_04.pdf" class="btn" download>Download CV</a>
     </div>
   </main>
-  <main>
-   <section aria-labelledby="about-heading">
-      <h1 id="about-heading">Learn a bit about me</h1>
-      <p>
-        Hi, I’m Natalia, a Düsseldorf-based UX/UI designer focused on creating accessible,
-        user-centered digital experiences. Skilled in visual design, prototyping, usability testing,
-        and design systems using tools like Figma, Miro, and Canva. I recently completed
-        CareerFoundry’s UI Design Program, where I delivered end-to-end projects across wellness,
-        lifestyle, e-commerce, productivity, and entertainment.
-      </p>
-      <p>
-        With a background in education, I bring strong collaboration, presentation, and
-        problem-solving skills that help me communicate clearly with both users and cross-functional
-        teams. I am now starting a specialisation in Frontend Development for Designers, bridging
-        design and development to build even stronger digital solutions.
-      </p>
-      <p>
-        I am fluent in English, German, Spanish, French and Russian, which allows me to thrive in
-        a multi-national environment.
-      </p>
-    </section>
-    <section aria-labelledby="skills-heading">
-      <h2 id="skills-heading">Skills</h2>
-      <ul>
-        <li>UX/UI Design</li>
-        <li>Design Systems</li>
-        <li>Prototyping</li>
-        <li>Wireframing</li>
-        <li>Accessibility</li>
-        <li>Visual Design</li>
-        <li>User Research</li>
-        <li>Usability Testing</li>
-        <li>HTML/CSS basics</li>
-      </ul>
-    </section>
-    <section aria-labelledby="tools-heading">
-      <h2 id="tools-heading">Tools</h2>
-      <ul>
-        <li>Figma</li>
-        <li>FigJam</li>
-        <li>Miro</li>
-        <li>Balsamiq</li>
-        <li>Lyssna</li>
-        <li>Maze</li>
-        <li>Canva</li>
-        <li>Notion</li>
-        <li>VS Code</li>
-      </ul>
-    </section>
-    <div><a href="./files/Natalia_Shevchik_CV_04.pdf" download>Download CV</a></div>
-  </main>
-  <footer id="contact">
-    <h2>Get in touch</h2>
-    <div><p>If you’d like to connect, collaborate, or just chat about design — feel free to reach out! Call: <a href="tel:+4916091083159">+49 16091083159</a></p></div>
-   <div><a href="https://www.linkedin.com/in/natalia-shevchik" target="_blank" rel="noopener noreferrer" aria-label="Visit my LinkedIn profile">
-    <img src="./Icon/LinkedIn.svg" alt="LinkedIn icon" width="48" height="48">
-  </a>
-    <a href="https://www.behance.net/nataliashevchik_uxui" target="_blank" rel="noopener noreferrer" aria-label="Visit my Behance profile">
-    <img src="./Icon/Behance.svg" alt="Behance icon" width="48" height="48">
-  </a>
-     <a href="https://dribbble.com/Natalia_Shevchik" target="_blank" rel="noopener noreferrer" aria-label="Visit my Dribbble profile">
-    <img src="./Icon/Dribble.svg" alt="Dribbble icon" width="48" height="48">
-  </a></div>
-    <div><a href="#" role="button" aria-label="Send Email">Send Email</a></div>
-    <div><p>Copyright Natalia Shevchik 2025</p></div>
+
+  <footer class="site-footer" id="contact" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-contact">
+        <h2>Get in touch</h2>
+        <p>If you’d like to connect, collaborate, or just chat about design — feel free to reach out! Call: <a href="tel:+4916091083159">+49 16091083159</a></p>
+      </div>
+
+      <div id="social-links" aria-hidden="false">
+        <a href="https://www.linkedin.com/in/natalia-shevchik" target="_blank" rel="noopener noreferrer"><img src="./Icon/LinkedIn.svg" alt="LinkedIn"></a>
+        <a href="https://www.behance.net/nataliashevchik_uxui" target="_blank" rel="noopener noreferrer"><img src="./Icon/Behance.svg" alt="Behance"></a>
+        <a href="https://dribbble.com/Natalia_Shevchik" target="_blank" rel="noopener noreferrer"><img src="./Icon/Dribble.svg" alt="Dribbble"></a>
+      </div>
+
+      <div class="footer-email">
+        <a class="btn--inverted" href="mailto:natalia@shevchik.cc" aria-label="Send Email">Send Email</a>
+      </div>
+
+      <div class="footer-copyright">Copyright © 2025 Natalia Shevchik</div>
+    </div>
   </footer>
 </body>
 </html>
