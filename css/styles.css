@@ -99,7 +99,7 @@ a:hover { color: var(--color-accent); }
   flex-direction: column;
   gap: .75rem;
 }
-.project img { width: 100%; border-radius: 8px; }
+.project img { width: 100%; border-radius: 8px; height: auto; }
 
 /* BUTTONS */
 .btn {
