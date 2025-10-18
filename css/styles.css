@@ -6,12 +6,12 @@
   --color-footer-text: #F9F9F9;
   --color-text: #333333;
   --max-width: 1440px;
-  --space-xxs: 0.25rem;
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 2rem;
-  --space-lg: 3rem;
-  --space-xl: 5rem;  
+  --space-xxs: 0.25rem; /* icons, labels */
+  --space-xs: 0.5rem;   /* text + label */
+  --space-sm: 1rem;     /* card content grouping */
+  --space-md: 2rem;     /* sub-section spacing */
+  --space-lg: 3rem;     /* section spacing */
+  --space-xl: 5rem;     /* major layout spacing */
 }
 
 /* RESET & BASE */
@@ -32,14 +32,19 @@ body {
   padding: 0 4rem;
 }
 
-.section { padding: var (--space-lg) 0; }
-.div {padding: var(--space-sm);}
+h1, h2, h3, h4, p, ul, img, .btn {
+  margin-bottom: var(--space-xs);
+}
+
+.section + .section {
+  margin-top: var(--space-lg);
+}
 
 @media (max-width: 1024px) {
   .site-width { padding: 0 3rem; }
 }
 @media (max-width: 767px) {
-  .site-width { padding: 0 1.5rem; } /* 24px margin per your request */
+  .site-width { padding: 0 1.5rem; }
 }
 
 /* HEADINGS & LINKS */
