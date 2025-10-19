@@ -177,6 +177,11 @@ a:hover { color: var(--color-accent); }
   object-position: center;
   border-radius: 16px;
   display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.project .btn {
+    margin-top: auto;
 }
 
 .project p { margin-bottom: var(--space-xs); }
@@ -516,7 +521,7 @@ footer.site-footer {
   flex-wrap: wrap;
   gap: var(--space-sm);
 }
-.footer-contact h2 { color: var(--color-footer-text); margin-bottom: .5rem; }
+.footer-contact h2 { color: var(--color-footer-text); margin-bottom: var(--space-xs); }
 .footer-contact a {
   color: var(--color-footer-text);
   text-decoration: underline;
@@ -544,6 +549,7 @@ footer.site-footer {
   max-width: 600px;
   margin: 0 auto var(--space-sm);
   word-wrap: break-word;
+  margin-bottom: var(--space-sm);
 }
 .footer-email, .footer-copyright {
   flex-shrink: 1;
@@ -595,5 +601,12 @@ footer.site-footer {
     flex-wrap: wrap;
     justify-content: center;
     gap: var(--space-xs);
+  }
+}
+
+@media (max-width: 700px) {
+  .footer-contact p {
+    max-width: 90%;
+    margin: 0 auto var(--space-sm);
   }
 }
