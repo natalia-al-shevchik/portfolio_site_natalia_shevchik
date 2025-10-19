@@ -40,12 +40,8 @@ h1, h2, h3, h4, p, ul, img, .btn {
   margin-top: var(--space-lg);
 }
 
-@media (max-width: 1024px) {
-  .site-width { padding: 0 3rem; }
-}
-@media (max-width: 767px) {
-  .site-width { padding: 0 1.5rem; }
-}
+@media (max-width: 1024px) { .site-width { padding: 0 3rem; } }
+@media (max-width: 767px) { .site-width { padding: 0 1.5rem; } }
 
 /* HEADINGS & LINKS */
 h1, h2, h3, h4 {
@@ -84,6 +80,8 @@ a:hover { color: var(--color-accent); }
 }
 .nav a { font-weight: 600; }
 
+
+
 /* HERO */
 .hero {
   display: grid;
@@ -92,6 +90,15 @@ a:hover { color: var(--color-accent); }
   align-items: center;
   margin: 3rem 0;
 }
+
+.hero, #work {
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+.hero-intro p {
+  margin-bottom: var(--space-xs);
+}
+
 .hero h1 { font-size: 2rem; }
 .hero p.lead { font-weight: 600; margin-bottom: .5rem; }
 .hero-photo img {
@@ -497,6 +504,7 @@ footer.site-footer {
   background: var(--color-footer-bg);
   color: var(--color-footer-text);
   padding: var(--space-md);
+  word-wrap: break-word;
 }
 .footer-inner {
   max-width: var(--max-width);
@@ -505,6 +513,8 @@ footer.site-footer {
   margin: 0 auto;
   text-align: center;
   padding: var(--space-sm);
+  flex-wrap: wrap;
+  gap: var(--space-sm);
 }
 .footer-contact h2 { color: var(--color-footer-text); margin-bottom: .5rem; }
 .footer-contact a {
@@ -575,13 +585,15 @@ footer.site-footer {
   .header-inner {
     flex-direction: column;
     align-items: center;
-    gap: 0.75rem;
     text-align: center;
+    gap: var(--space-xs);
   }
+  .logo img { height: 48px; }
+  
   .nav ul {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1.25rem;
+    gap: var(--space-xs);
   }
 }
