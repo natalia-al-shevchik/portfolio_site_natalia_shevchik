@@ -19,7 +19,7 @@
   --space-sm: 1rem;     /* card content grouping */
   --space-md: 2rem;     /* sub-section spacing */
   --space-lg: 3rem;     /* section spacing */
-  --space-xl: 5rem;     /* major layout spacing */
+  --space-xl: 10rem;     /* major layout spacing */
 }
 
 /* =========================================================
@@ -183,7 +183,7 @@ a:hover {
   width: 100%;
   max-width: 480px;
   height: auto;
-  border-radius: 12px;
+  border-radius: 4px;
   display: block;
   margin: 0 auto;
 }
@@ -320,7 +320,7 @@ a:hover {
   width: 100%;
   max-width: 320px;
   height: auto;
-  border-radius: 12px;
+  border-radius: 4px;
   display: block;
 }
 
@@ -483,7 +483,7 @@ a:hover {
   grid-template-columns: 48px auto;
   gap: var(--space-sm);
   align-items: flex-start;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-xl);
 }
 
 #insights .insight img {
