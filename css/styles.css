@@ -12,6 +12,7 @@
 
   /* ---- Layout ---- */
   --max-width: 1440px;
+  --header-height: 80px;
 
   /* ---- Spacing scale ---- */
   --space-xxs: 0.25rem; /* icons, labels */
@@ -44,11 +45,12 @@ body {
 /* =========================================================
    GLOBAL CONTAINERS & LAYOUT
    ========================================================= */
-.site-width {
+   .site-width {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 4rem;
 }
+
 h1, h2, h3, h4, p, ul, img, .btn {
   margin-bottom: var(--space-xs);
 }
@@ -84,7 +86,11 @@ a:hover {
   width: 100%;
   background: #fff;
   border-bottom: 1px solid rgba(20,30,70,0.08);
+  position: fixed; top: 0; left: 0;
+  z-index: 1000;
+  height: var(--header-height);
 }
+
 .header-inner {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -92,6 +98,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: var(--header-height);
 }
 
 .visually-hidden {
@@ -158,6 +165,20 @@ a:hover {
   cursor: pointer;
 }
 
+/* =========================================================
+   MAIN LAYOUT
+   ========================================================= */
+
+   main {
+    display: block;
+    padding-top: calc(var(--header-height) + 40px);
+    padding-bottom: var(--space-md);
+   }
+
+   main.site-width {
+  padding-top: calc(var(--header-height) + 40px);
+  padding-bottom: var(--space-xl);
+}
 
 /* =========================================================
    HERO SECTION
@@ -695,6 +716,10 @@ footer.site-footer {
 }
 
 @media (max-width: 767px) {
+  :root {
+    --header-height: 64px;
+  }
+
   .header-inner {
     flex-direction: row;
     align-items: center;
@@ -708,7 +733,8 @@ footer.site-footer {
 
   .logo-mobile {
     display: block;
-    height: 56px;
+    height: 40px;
+    padding-top: var(--space-sm);
   }
 
   .logo-link {
