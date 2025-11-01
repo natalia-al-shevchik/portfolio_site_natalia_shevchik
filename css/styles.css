@@ -154,31 +154,48 @@ a:hover {
 
 .navtoggle li .icon {
   position: absolute;
-  right: 48px;
-  top: 16px;
-  font-size: 24px;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--color-primary);
+  transition: transform 0.3s ease, top 0.3s ease;
 }
 
-.nav .icon {
+.nav .icon,
+.navtoggle li .icon {
   display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
+}
+
+.navtoggle.responsive li .icon {
+  top: 1.2rem;
+  transform: none;
+}
+
+.nav .icon i {
+  transition: transform 0.3s ease;
+  transform-origin: center center;
+}
+
+.navtoggle.responsive .icon i {
+  transform: rotate(90deg);
 }
 
 /* =========================================================
    MAIN LAYOUT
    ========================================================= */
-
    main {
     display: block;
-    padding-top: calc(var(--header-height) + 40px);
-    padding-bottom: var(--space-md);
+    padding-top: calc(var(--header-height) + 2rem);
+    padding-bottom: var(--space-xl);
    }
 
    main.site-width {
-  padding-top: calc(var(--header-height) + 40px);
-  padding-bottom: var(--space-xl);
-}
+    padding-top: calc(var(--header-height) + 2rem);
+    padding-bottom: var(--space-xl);
+  }
 
 /* =========================================================
    HERO SECTION
@@ -720,6 +737,10 @@ footer.site-footer {
     --header-height: 64px;
   }
 
+  main .site-width {
+    padding-top: calc(var(--header-height) + 1.25rem);
+  }
+
   .header-inner {
     flex-direction: row;
     align-items: center;
@@ -733,7 +754,7 @@ footer.site-footer {
 
   .logo-mobile {
     display: block;
-    height: 40px;
+    height: 56px;
     padding-top: var(--space-sm);
   }
 
@@ -742,7 +763,6 @@ footer.site-footer {
     padding-left: 0.25rem;
   }
   
-
   /* hide all menu items except hamburger */
   .navtoggle ul li {
   display: none;
@@ -750,26 +770,32 @@ footer.site-footer {
 
   .navtoggle ul li:last-child {
   display: block;
+  padding-bottom: var(--space-sm);
   }
 
-  /* show hamburger */
-  .nav .icon {
+  .navtoggle li .icon {
     display: block;
-    color: var(--color-primary);
-    font-size: 1.8rem;
-    cursor: pointer;
   }
 
   /* when toggled, show all items */
   .navtoggle.responsive ul li {
-    display: block;
+    display: inline-block;
     text-align: right;
     padding: 10px 0;
+  }
+
+  .navtoggle.responsive nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding-top: 1.5rem;
   }
 
   .navtoggle.responsive ul li:last-child {
     border-top: none;
     padding-bottom: 10px;
+    padding-right: 1.5rem;
   }
 
   .navtoggle.responsive nav {
@@ -787,15 +813,6 @@ footer.site-footer {
   }
 }
 
-/* hamburger animation*/
-.nav .icon i {
-  transition: transform 0.3s ease;
-}
-
-.navtoggle.responsive .icon i {
-  transform: rotate(90deg);
-}
-
-  .footer-contact p {
+.footer-contact p {
     max-width: 90%;
   }
