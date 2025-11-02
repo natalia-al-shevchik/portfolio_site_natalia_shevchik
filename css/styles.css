@@ -79,6 +79,14 @@ a:hover {
   color: var(--color-accent);
 }
 
+p {
+  max-width: 120ch;
+  text-align: left;
+  align-content: center;
+  margin-left: 0;
+  margin-right: auto;
+}
+
 /* =========================================================
    HEADER
    ========================================================= */
@@ -195,6 +203,10 @@ a:hover {
    main.site-width {
     padding-top: calc(var(--header-height) + 2rem);
     padding-bottom: var(--space-xl);
+  }
+
+  .footer-contact p {
+    align-items: center;
   }
 
 /* =========================================================
