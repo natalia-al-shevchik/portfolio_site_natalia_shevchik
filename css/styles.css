@@ -82,8 +82,7 @@ a:hover {
 p {
   max-width: 120ch;
   text-align: left;
-  align-content: center;
-  margin-left: 0;
+  margin-left: auto;
   margin-right: auto;
 }
 
@@ -483,15 +482,22 @@ p {
 /* Problem / Objective / Solution grid */
 .problem-grid, .understanding-problem {
   display: grid;
-  grid-template-columns: 1fr 48px 1fr 48px 1fr;
-  align-items: start;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  max-width: 120ch;
+  align-items: flex-start;
   gap: 1rem;
-  margin: 2rem 0;
+  margin: 2rem auto;
   text-align: center;
 }
 .problem-grid .arrow, .understanding-problem .arrow {
   justify-self: center;
+  width: 80px;
 }
+
+.problem-grid .arrow img, .understanding-problem .arrow img {
+  width: 80px;
+}
+
 @media (max-width: 900px) {
   .problem-grid, .understanding-problem {
     grid-template-columns: 1fr;
@@ -560,7 +566,7 @@ p {
   display: grid;
   grid-template-columns: 48px auto;
   gap: var(--space-sm);
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: var(--space-xs);
 }
 
@@ -594,6 +600,15 @@ p {
 /* -----------------------------------------
    REGO — LOW-FI & MOBILE SCREENS
 ------------------------------------------*/
+#low-fi-wireframes .screen-grid,
+#mobile-screens .image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: start;
+  gap: var(--space-md);
+}
+
 #low-fi-wireframes .screen-grid img,
 #mobile-screens .image-grid img {
   max-width: 260px;
@@ -659,18 +674,48 @@ p {
   padding: var(--space-xxs);
 }
 .before-after-grid .arrow img {
-  width: 240px;
+  width: 160px;
+  margin: 0 auto;
   transition: width 0.3s ease;
+}
+
+.before-after-insight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+.before-after-insight ul {
+  margin: 0;
+  padding: 0;
+  text-align: left;
 }
 
 /* ---- Responsive (Before/After) ---- */
 @media (max-width: 1024px) {
   .before-after-grid {
-    grid-template-columns: 1fr 32px 1fr;
+    grid-template-columns: 1fr 80px 1fr;
     gap: 0.75rem;
   }
   .before-after-grid .arrow img { width: 64px; }
+
+  .before-after-insight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  }
+
+  .before-after-insight ul {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  }
 }
+
 @media (max-width: 700px) {
   .before-after-grid {
     grid-template-columns: 1fr;
@@ -679,7 +724,7 @@ p {
   }
   .before-after-grid .arrow img {
     transform: rotate(90deg);
-    width: 160px;
+    width: 80px;
     height: 24px;
     margin: var(--space-xs) auto;
   }
