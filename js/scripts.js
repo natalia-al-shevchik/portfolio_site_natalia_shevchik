@@ -7,3 +7,15 @@ function menuToggle() {
     x.className = "navtoggle";
   }
 }
+
+window.addEventListener('load', () => {
+  const splash = document.getElementById('splash-screen');
+  const body = document.body;
+
+  body.classList.remove('loaded');
+
+  setTimeout( () => {
+    splash.classList.add('hidden');
+    body.classList.add('loaded')
+  }, 5000);
+});
