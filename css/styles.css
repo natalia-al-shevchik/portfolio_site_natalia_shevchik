@@ -263,17 +263,6 @@ main.site-width {
   visibility: hidden;
 }
 
-body {
-  opacity: 0;
-  overflow: hidden;
-  transition: opacity 0.8s ease;
-}
-
-body.loaded {
-  opacity: 1;
-  overflow: auto;
-}
-
 #splash-gears {
   width: min(40vw, 400px);
   height: auto;
@@ -289,16 +278,16 @@ body.loaded {
   to { transform: rotate(-360deg); }
 }
 
-#wheel-left { 
-  animation: rotate-cw 2s linear infinite;
+#gear-left { 
+  animation: rotate-cw 8s linear infinite;
   transform-box: fill-box;
   transform-origin: center; }
-#wheel-right {
-  animation: rotate-ccw 3s linear infinite;
+#gear-right {
+  animation: rotate-ccw 6.5s linear infinite;
   transform-box: fill-box;
   transform-origin: center; }
-#wheel-top {
-  animation: rotate-cw 2.5s linear infinite;
+#gear-top {
+  animation: rotate-cw 8s linear infinite;
   transform-box: fill-box;
   transform-origin: center; }
 

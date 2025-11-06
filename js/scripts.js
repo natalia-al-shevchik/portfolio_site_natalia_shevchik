@@ -10,12 +10,9 @@ function menuToggle() {
 
 window.addEventListener('load', () => {
   const splash = document.getElementById('splash-screen');
-  const body = document.body;
-
-  body.classList.remove('loaded');
+  const splashDuration = 1500;
 
   setTimeout( () => {
     splash.classList.add('hidden');
-    body.classList.add('loaded')
-  }, 5000);
+  }, splashDuration);
 });
