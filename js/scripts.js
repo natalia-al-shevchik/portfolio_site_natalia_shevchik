@@ -15,4 +15,10 @@ window.addEventListener('load', () => {
   setTimeout( () => {
     splash.classList.add('hidden');
   }, splashDuration);
+
+  splash.addEventListener("transitionend", (e) => {
+    if (e.PropertyName === 'opacity') {
+      splash.remove();
+    }
+  });
 });
