@@ -12,13 +12,24 @@ window.addEventListener('load', () => {
   const splash = document.getElementById('splash-screen');
   const splashDuration = 800;
 
-  setTimeout( () => {
-    splash.classList.add('hidden');
-  }, splashDuration);
+  // We check if splash screen was already shown in this session
+  const splashShown = sessionStorage.getItem('splashShown');
 
-  splash.addEventListener("transitionend", (e) => {
-    if (e.PropertyName === 'opacity') {
-      splash.remove();
-    }
-  });
+  if (splashShown) {
+    // If already shown, remove it immediately
+    splash.remove();
+  } else {
+    // Show splash screen
+    setTimeout(() => {
+      splash.classList.add('hidden');
+      // Save flag in sessionStorage
+      sessionStorage.setItem('splashShown', 'true');
+    }, splashDuration);
+
+    splash.addEventListener('transitionend', (e) => {
+      if (e.propertyName === 'opacity') {
+        splash.remove();
+      }
+    });
+  }
 });
