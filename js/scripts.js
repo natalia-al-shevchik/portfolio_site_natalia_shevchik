@@ -10,7 +10,7 @@ function menuToggle() {
 
 window.addEventListener('load', () => {
   const splash = document.getElementById('splash-screen');
-  const splashDuration = 1500;
+  const splashDuration = 800;
 
   setTimeout( () => {
     splash.classList.add('hidden');

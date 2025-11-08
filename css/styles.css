@@ -920,6 +920,7 @@ footer.site-footer {
   max-width: 600px;
   margin: 0 auto var(--space-sm);
   word-wrap: break-word;
+  text-align: center;
 }
 
 .footer-contact a {
