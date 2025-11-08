@@ -110,6 +110,10 @@ a:hover {
   color: var(--color-accent);
 }
 
+a:selection {
+  color: var(--color-accent);
+}
+
 p {
   max-width: 120ch;
   text-align: left;
@@ -784,7 +788,7 @@ main.site-width {
    ========================================================= */
 .before-after-grid {
   display: grid;
-  grid-template-columns: 1fr 32px 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   justify-items: center;
   gap: var(--space-sm);
@@ -817,18 +821,21 @@ main.site-width {
 .before-after-insight ul {
   margin: 0;
   padding: 0;
+  list-style-position: inside;
   text-align: left;
 }
 
 /* ---- Responsive (Before/After) ---- */
 @media (max-width: 1024px) {
   .before-after-grid {
-    grid-template-columns: 1fr 80px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 0.75rem;
   }
 
   .before-after-grid .arrow img {
     width: 64px;
+    align-self: center;
+    gap: 16px
   }
 
   .before-after-insight {
@@ -843,6 +850,7 @@ main.site-width {
     margin: 0;
     padding: 0;
     text-align: left;
+    list-style-position: inside;
   }
 }
 
@@ -853,11 +861,19 @@ main.site-width {
     margin: var(--space-md);
   }
 
-  .before-after-grid .arrow img {
+  .before-after-insight {
+    display: grid;
+    grid-template-rows: auto;
+    align-content: center;
+  }
+
+  .before-after-insight .arrow img {
     transform: rotate(90deg);
     width: 80px;
     height: 24px;
     margin: var(--space-xs) auto;
+    gap: 16px;
+    align-self: center;
   }
 
   .before-after-grid img {
@@ -1024,7 +1040,6 @@ footer.site-footer {
     flex-direction: row;
     justify-content: flex-end;
     gap: 1rem;
-    padding-top: 1.5rem;
   }
 
   .navtoggle.responsive ul li:last-child {
