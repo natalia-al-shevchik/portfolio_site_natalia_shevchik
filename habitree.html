@@ -12,6 +12,8 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Work+Sans:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <script
       src="https://kit.fontawesome.com/0b931f4725.js"
@@ -178,56 +180,62 @@
           The focus was on reducing friction — so starting or tracking a habit
           always felt intuitive and rewarding.
         </p>
-        <h3>Habitree UX Flow — New User</h3>
-        <picture>
-          <source
-            srcset="./images/habitree/habitree_flow-new-user-small.png"
-            media="(max-width:767px)"
-          />
-          <source
-            srcset="./images/habitree/habitree_flow-new-user-medium.png"
-            media="(max-width:1199px)"
-          />
-          <img
-            src="./images/habitree/habitree_flow-new-user-large.png"
-            alt="new user flow"
-            loading="lazy"
-          />
-        </picture>
+        <figure class="user-flow-image">
+          <figcaption class="flow-label">Habitree UX Flow — New User</figcaption>
+          <picture class="flow-image">
+            <source
+              srcset="./images/habitree/habitree_flow-new-user-small.png"
+              media="(max-width:767px)"
+            />
+            <source
+              srcset="./images/habitree/habitree_flow-new-user-medium.png"
+              media="(max-width:1199px)"
+            />
+            <img
+              src="./images/habitree/habitree_flow-new-user-large.png"
+              alt="new user flow"
+              loading="lazy"
+            />
+          </picture>
+        </figure>
 
-        <h3>Habitree UX Flow — Returning User</h3>
-        <picture>
-          <source
-            srcset="./images/habitree/habitree_flow-returning-user-small.png"
-            media="(max-width:767px)"
-          />
-          <source
-            srcset="./images/habitree/habitree_flow-returning-user-medium.png"
-            media="(max-width:1199px)"
-          />
-          <img
-            src="./images/habitree/habitree_flow-returning-user-large.png"
-            alt="returning user flow"
-            loading="lazy"
-          />
-        </picture>
+        <figure class="user-flow-image">
+          <figcaption class="flow-label">Habitree UX Flow — Returning User</figcaption>
+          <picture class="flow-image">
+            <source
+              srcset="./images/habitree/habitree_flow-returning-user-small.png"
+              media="(max-width:767px)"
+            />
+            <source
+              srcset="./images/habitree/habitree_flow-returning-user-medium.png"
+              media="(max-width:1199px)"
+            />
+            <img
+              src="./images/habitree/habitree_flow-returning-user-large.png"
+              alt="returning user flow"
+              loading="lazy"
+            />
+          </picture>
+        </figure>
 
-        <h3>Habitree UX Flow — Add Habit</h3>
-        <picture>
-          <source
-            srcset="./images/habitree/habitree_flow-add-habit-small.png"
-            media="(max-width:767px)"
-          />
-          <source
-            srcset="./images/habitree/habitree_flow-add-habit-medium.png"
-            media="(max-width:1199px)"
-          />
-          <img
-            src="./images/habitree/habitree_flow-add-habit-large.png"
-            alt="add habit flow"
-            loading="lazy"
-          />
-        </picture>
+        <figure class="user-flow-image">
+          <figcaption class="flow-label">Habitree UX Flow — Add Habit</figcaption>
+          <picture class="flow-image">
+            <source
+              srcset="./images/habitree/habitree_flow-add-habit-small.png"
+              media="(max-width:767px)"
+            />
+            <source
+              srcset="./images/habitree/habitree_flow-add-habit-medium.png"
+              media="(max-width:1199px)"
+            />
+            <img
+              src="./images/habitree/habitree_flow-add-habit-large.png"
+              alt="add habit flow"
+              loading="lazy"
+            />
+          </picture>
+        </figure>
       </section>
 
       <section id="understanding-problem" class="section">
@@ -323,7 +331,7 @@
           It taught me how one design system could flex to reflect each
           platform’s native character while staying consistent in feel.
         </p>
-        <div class="screen-row" role="list">
+        <div class="screen-row owl-carousel owl-theme" role="list">
           <div class="screen" role="listitem">
             <h4>iOS Home — Low-fidelity</h4>
             <img
@@ -352,7 +360,7 @@
           </div>
         </div>
 
-        <div class="screen-row" role="list" style="margin-top: 1.75rem">
+        <div class="screen-row owl-carousel owl-theme" role="list">
           <div class="screen" role="listitem">
             <h4>iOS Progress — Low-fidelity</h4>
             <img
@@ -380,7 +388,7 @@
           </div>
         </div>
 
-        <div class="screen-row" role="list" style="margin-top: 1.75rem">
+        <div class="screen-row owl-carousel owl-theme" role="list">
           <div class="screen" role="listitem">
             <h4>Android Home — Low-fidelity</h4>
             <img
@@ -407,7 +415,7 @@
           </div>
         </div>
 
-        <div class="screen-row" role="list" style="margin-top: 1.75rem">
+        <div class="screen-row owl-carousel owl-theme" role="list">
           <div class="screen" role="listitem">
             <h4>Android Progress — Low-fidelity</h4>
             <img
@@ -573,6 +581,7 @@
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
+    <script src="js/owl.carousel.js"></script>
     <script src="js/scripts.js"></script>
   </body>
 </html>

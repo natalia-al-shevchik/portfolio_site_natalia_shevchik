@@ -667,28 +667,195 @@ main.site-width {
   padding: var(--space-xs);
 }
 
-/* Tablet: 2 columns */
+/* Tablet: carousel */
 @media (max-width: 1024px) {
-  #screen-evolution .screen-row {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Mobile: 1 column */
-@media (max-width: 700px) {
-  #screen-evolution .screen-row {
-    grid-template-columns: 1fr;
+  #screen-evolution .screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
   }
 
   #screen-evolution .screen img {
-    max-width: 340px;
+    order: 1;
+    max-width: 90%;
+  }
+
+  .screen-evolution .screen h4 {
+    order: 2;
+    margin-top: 0.6rem;
+    font-size: 0.94rem;
+    text-align: center;
+  }
+
+  .owl-carousel .screen {
+    width: auto;
+    padding: 0.25rem 0;
+  }
+
+  .owl-dots {
+    margin-top: 0.75rem;
+  }
+  .owl-nav button {
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--color-primary);
+  }
+
+  .screen-row {
+    display: block !important;
   }
 }
 
+/* Mobile: carousel */
+@media (max-width: 700px) {
+  #screen-evolution .screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  #screen-evolution .screen img {
+    order: 1;
+    max-width: 90%;
+  }
+
+  .screen-evolution .screen h4 {
+    order: 2;
+    margin-top: 0.6rem;
+    font-size: 0.94rem;
+    text-align: center;
+  }
+
+  .owl-carousel .screen {
+    width: auto;
+    padding: 0.25rem 0;
+  }
+
+  .owl-dots {
+    margin-top: 0.75rem;
+  }
+  .owl-nav button {
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--color-primary);
+  }
+}
+
+.owl-carousel {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+  box-sizing: border-box;
+}
+
+.owl-stage {
+  display: flex;
+  align-items: stretch;
+}
+
+.owl-item {
+  display: flex;
+  justify-content: center;
+}
+
+.owl-nav {
+  position: relative;
+  margin-top: var(--space-sm);
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.owl-nav button {
+  background: var(--color-primary);
+  color: var(--color-surface);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.owl-nav button:hover {
+  background: var(--color-accent);
+  color: var(--color-surface);
+  transform: translateY(-2px);
+}
+
+.owl-theme .owl-nav {
+  margin-top: var(--space-xs);
+}
+
+.owl-dots {
+  margin-top: var(--space-xs);
+  text-align: center;
+}
+
+.owl-dots .owl-dot span {
+  background: rgba(20, 30, 70, 0.2);
+}
+
+.owl-dots .owl-dot.active span {
+  background: var(--color-primary);
+}
+
 /* -----------------------------------------
-   HABITREE — INSIGHTS GRID
-   Icon left, text right, aligned to top
+   HABITREE
 ------------------------------------------*/
+.project-mockups {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+}
+
+.mockup {
+  position: relative;
+  width: min(90%, 800px);
+  margin: 0;
+}
+
+.mockup picture,
+.mockup img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+
+.mockup figcaption {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  text-align: center;
+  color: var(--color-surface);
+  font-family: "Luckiest Guy", cursive;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.25);
+  padding: 0.4em 1em;
+  border-radius: 0.5em;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .mockup figcaption {
+    font-size: 1rem;
+    bottom: 5%;
+  }
+}
+
+
 #insights .insight {
   display: grid;
   grid-template-columns: 48px auto;
@@ -885,7 +1052,6 @@ main.site-width {
    UNIVERSAL IMAGE DISPLAY
    ========================================================= */
 .section picture img,
-.project-mockups img,
 #project-cover img,
 .project-timeline img,
 .user-flows img,
