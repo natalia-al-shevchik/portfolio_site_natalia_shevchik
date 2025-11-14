@@ -1,75 +1,124 @@
-console.log("Hey there! Welcome to my creative world! I'm thrilled to see you here")
+console.log("Hey there! Welcome to my creative world! I'm thrilled to see you here");
+
+/* ========== NAV MENU TOGGLE ========== */
 function menuToggle() {
-  var x = document.getElementById("myNavtoggle");
-  if (x.className === "navtoggle") {
-    x.className += " responsive";
-  } else {
-    x.className = "navtoggle";
-  }
+  const x = document.getElementById("myNavtoggle");
+  x.classList.toggle("responsive");
 }
 
-window.addEventListener('load', () => {
-  const splash = document.getElementById('splash-screen');
+/* ========== SPLASH SCREEN (independent logic) ========== */
+window.addEventListener("load", () => {
+  const splash = document.getElementById("splash-screen");
   const splashDuration = 800;
 
-  // We check if splash screen was already shown in this session
-  const splashShown = sessionStorage.getItem('splashShown');
+  if (!splash) return; // if project page has no splash
+
+  const splashShown = sessionStorage.getItem("splashShown");
 
   if (splashShown) {
-    // If already shown, remove it immediately
     splash.remove();
   } else {
-    // Show splash screen
+    // fade out after defined duration
     setTimeout(() => {
-      splash.classList.add('hidden');
-      // Save flag in sessionStorage
-      sessionStorage.setItem('splashShown', 'true');
+      splash.classList.add("hidden");
+      sessionStorage.setItem("splashShown", "true");
     }, splashDuration);
 
-    splash.addEventListener('transitionend', (e) => {
-      if (e.propertyName === 'opacity') {
-        splash.remove();
-      }
+    // remove from DOM after fade completes
+    splash.addEventListener("transitionend", (e) => {
+      if (e.propertyName === "opacity") splash.remove();
     });
   }
 });
 
-(function($) {
-  function initOrDestroyScreenCarousels() {
-    const $rows = $('.screen-row');
-
-    $rows.each(function() {
+/* =======================================================
+   HABITREE CAROUSELS (.carousel)
+   → Grid on desktop, carousel on tablet/mobile
+======================================================= */
+(function ($) {
+  function initOrDestroyHabitreeCarousels() {
+    $(".carousel").each(function () {
       const $row = $(this);
 
       if (window.innerWidth <= 1024) {
-        if (!$row.hasClass('owl-loaded')) {
-          $row.addClass('owl-carousel');
+        if (!$row.hasClass("owl-loaded")) {
+          $row.addClass("owl-carousel");
           $row.owlCarousel({
-            items: 1,
-            margin: 20,
             loop: false,
+            margin: 20,
             nav: true,
             dots: true,
+            navText: ["‹", "›"],
             responsive: {
+              0: { items: 1 },
               600: { items: 2 },
-              1024: { items: 1 }
-            }
+              900: { items: 3 },
+            },
           });
         }
       } else {
-        if ($row.hasClass('owl-loaded')) {
-          $row.trigger('destroy.owl.carousel');
-          $row.removeClass('owl-carousel owl-loaded');
-          $row.find('.owl-stage-outer').children().unwrap();
+        if ($row.hasClass("owl-loaded")) {
+          $row.trigger("destroy.owl.carousel");
+          $row.removeClass("owl-carousel owl-loaded");
+          $row.find(".owl-stage-outer").children().unwrap();
         }
       }
     });
   }
 
-  $(window).on('resize', function() {
-    clearTimeout(window.resizing);
-    window.resizing = setTimeout(initOrDestroyScreenCarousels, 150);
+  // debounce for Habitree only
+  let resizeTimerHabitree;
+  $(window).on("resize", function () {
+    clearTimeout(resizeTimerHabitree);
+    resizeTimerHabitree = setTimeout(initOrDestroyHabitreeCarousels, 150);
   });
 
-  $(document).ready(initOrDestroyScreenCarousels);
+  $(document).ready(initOrDestroyHabitreeCarousels);
+})(jQuery);
+
+/* =======================================================
+   REGO + NOTABENE CAROUSELS (.wireframes-carousel, .mobile-carousel, .screen-grid, .image-grid)
+======================================================= */
+(function ($) {
+  function initOrDestroyOtherCarousels() {
+    const selectors =
+      ".wireframes-carousel, .mobile-carousel, .screen-grid, .image-grid";
+
+    $(selectors).each(function () {
+      const $carousel = $(this);
+
+      if (window.innerWidth <= 1024) {
+        if (!$carousel.hasClass("owl-loaded")) {
+          $carousel.addClass("owl-carousel");
+          $carousel.owlCarousel({
+            loop: false,
+            margin: 16,
+            nav: true,
+            dots: true,
+            navText: ["‹", "›"],
+            responsive: {
+              0: { items: 1 },
+              600: { items: 2 },
+              900: { items: 2 },
+            },
+          });
+        }
+      } else {
+        if ($carousel.hasClass("owl-loaded")) {
+          $carousel.trigger("destroy.owl.carousel");
+          $carousel.removeClass("owl-carousel owl-loaded");
+          $carousel.find(".owl-stage-outer").children().unwrap();
+        }
+      }
+    });
+  }
+
+  // debounce for ReGo + NotaBene
+  let resizeTimerOther;
+  $(window).on("resize", function () {
+    clearTimeout(resizeTimerOther);
+    resizeTimerOther = setTimeout(initOrDestroyOtherCarousels, 150);
+  });
+
+  $(document).ready(initOrDestroyOtherCarousels);
 })(jQuery);

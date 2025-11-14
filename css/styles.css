@@ -121,6 +121,13 @@ p {
   margin-right: auto;
 }
 
+.text-container {
+  max-width: 120ch;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
 /* =========================================================
    HEADER
    ========================================================= */
@@ -273,27 +280,42 @@ main.site-width {
 }
 
 @keyframes rotate-cw {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes rotate-ccw {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(-360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
 }
 
-#gear-left { 
+#gear-left {
   animation: rotate-cw 8s linear infinite;
   transform-box: fill-box;
-  transform-origin: center; }
+  transform-origin: center;
+}
+
 #gear-right {
   animation: rotate-ccw 6.5s linear infinite;
   transform-box: fill-box;
-  transform-origin: center; }
+  transform-origin: center;
+}
+
 #gear-top {
   animation: rotate-cw 8s linear infinite;
   transform-box: fill-box;
-  transform-origin: center; }
+  transform-origin: center;
+}
 
 /* =========================================================
    HERO SECTION
@@ -364,12 +386,14 @@ main.site-width {
   color: var(--color-primary);
   margin: 0.5rem 0 var(--space-sm);
   overflow: hidden;
+  text-align: left;
 }
 
 .project p {
   font-size: 0.95rem;
   line-height: 1.5;
   overflow: hidden;
+  text-align: left;
 }
 
 .project .btn {
@@ -508,6 +532,10 @@ main.site-width {
   align-content: start;
 }
 
+.about-text-cv p {
+  margin-top: 0;
+}
+
 .skills-tools {
   display: grid;
   grid-template-rows: auto auto;
@@ -633,186 +661,16 @@ main.site-width {
   }
 }
 
-#screen-evolution .screen-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: start;
-  /* Ensures all items top-align */
-  gap: var(--space-md);
-  text-align: center;
-  margin-top: var(--space-md);
-}
-
-#screen-evolution .screen {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-xs);
-}
-
-#screen-evolution .screen h4 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--color-primary);
-  margin-bottom: var(--space-xs);
-}
-
-#screen-evolution .screen img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 12px;
-  object-fit: contain;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-  padding: var(--space-xs);
-}
-
-/* Tablet: carousel */
-@media (max-width: 1024px) {
-  #screen-evolution .screen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-xs);
-  }
-
-  #screen-evolution .screen img {
-    order: 1;
-    max-width: 90%;
-  }
-
-  .screen-evolution .screen h4 {
-    order: 2;
-    margin-top: 0.6rem;
-    font-size: 0.94rem;
-    text-align: center;
-  }
-
-  .owl-carousel .screen {
-    width: auto;
-    padding: 0.25rem 0;
-  }
-
-  .owl-dots {
-    margin-top: 0.75rem;
-  }
-  .owl-nav button {
-    background: transparent;
-    border: none;
-    font-size: 1.6rem;
-    color: var(--color-primary);
-  }
-
-  .screen-row {
-    display: block !important;
-  }
-}
-
-/* Mobile: carousel */
-@media (max-width: 700px) {
-  #screen-evolution .screen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-xs);
-  }
-
-  #screen-evolution .screen img {
-    order: 1;
-    max-width: 90%;
-  }
-
-  .screen-evolution .screen h4 {
-    order: 2;
-    margin-top: 0.6rem;
-    font-size: 0.94rem;
-    text-align: center;
-  }
-
-  .owl-carousel .screen {
-    width: auto;
-    padding: 0.25rem 0;
-  }
-
-  .owl-dots {
-    margin-top: 0.75rem;
-  }
-  .owl-nav button {
-    background: transparent;
-    border: none;
-    font-size: 1.6rem;
-    color: var(--color-primary);
-  }
-}
-
-.owl-carousel {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 var(--space-sm);
-  box-sizing: border-box;
-}
-
-.owl-stage {
-  display: flex;
-  align-items: stretch;
-}
-
-.owl-item {
-  display: flex;
-  justify-content: center;
-}
-
-.owl-nav {
-  position: relative;
-  margin-top: var(--space-sm);
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.owl-nav button {
-  background: var(--color-primary);
-  color: var(--color-surface);
-  border: none;
-  border-radius: 50%;
-  font-size: 1.25rem;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.owl-nav button:hover {
-  background: var(--color-accent);
-  color: var(--color-surface);
-  transform: translateY(-2px);
-}
-
-.owl-theme .owl-nav {
-  margin-top: var(--space-xs);
-}
-
-.owl-dots {
-  margin-top: var(--space-xs);
-  text-align: center;
-}
-
-.owl-dots .owl-dot span {
-  background: rgba(20, 30, 70, 0.2);
-}
-
-.owl-dots .owl-dot.active span {
-  background: var(--color-primary);
-}
-
 /* -----------------------------------------
    HABITREE
 ------------------------------------------*/
 .project-mockups {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  align-items: start;
+  margin: 0 auto;
+  object-fit: contain;
 }
 
 .mockup {
@@ -834,7 +692,7 @@ main.site-width {
   bottom: 8%;
   left: 50%;
   transform: translateX(-50%);
-  width: 80%;
+  width: 90%;
   text-align: center;
   color: var(--color-surface);
   font-family: "Luckiest Guy", cursive;
@@ -848,6 +706,23 @@ main.site-width {
   box-sizing: border-box;
 }
 
+/* Tablet breakpoint */
+@media (max-width: 1024px) {
+  .mockup figcaption {
+    bottom: 12%;
+    font-size: clamp(1.1rem, 4vw, 1.8rem);
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 767px) {
+  .mockup figcaption {
+    bottom: 20%;
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    padding: 0.3em 0.8em;
+  }
+}
+
 @media (max-width: 600px) {
   .mockup figcaption {
     font-size: 1rem;
@@ -855,11 +730,34 @@ main.site-width {
   }
 }
 
+.user-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.user-flow picture img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.user-flow figcaption {
+  margin-top: 0.25rem;
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  color: var(--color-text);
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.5px;
+}
+
 
 #insights .insight {
   display: grid;
   grid-template-columns: 48px auto;
   gap: var(--space-sm);
+  max-width: 120ch;
   align-items: center;
   margin-bottom: var(--space-xs);
 }
@@ -893,61 +791,35 @@ main.site-width {
 }
 
 /* -----------------------------------------
-   REGO — LOW-FI & MOBILE SCREENS
+   REGO
 ------------------------------------------*/
-#low-fi-wireframes .screen-grid,
-#mobile-screens .image-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
-  align-items: start;
-  gap: var(--space-md);
+
+.user-flow-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+  text-align: center;
 }
 
-#low-fi-wireframes .screen-grid img,
-#mobile-screens .image-grid img {
-  max-width: 260px;
-  padding: var(--space-xs);
+.user-flow-image picture img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
-#low-fi-wireframes .screen-grid,
-#mobile-screens .image-grid {
-  gap: var(--space-md);
-  padding: var(--space-md) var(--space-sm);
-  justify-items: center;
-  align-items: start;
+.user-flow-image figcaption {
+  margin-top: 0.25rem;
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  color: var(--color-text);
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.5px;
 }
 
-/* -----------------------------------------
-   NOTABENE — HI-FI WIREFRAMES & MOBILE SCREENS
-   Consistent sizing and breathing room
-------------------------------------------*/
-#hi-fi-wireframes .screen-grid img,
-#mobile-screens .image-grid img {
-  max-width: 260px;
-  padding: var(--space-xs);
-}
-
-#hi-fi-wireframes .screen-grid,
-#mobile-screens .image-grid {
-  gap: var(--space-md);
-  justify-items: center;
-  align-items: start;
-  padding: var(--space-md) var(--space-sm);
-}
-
-@media (max-width: 700px) {
-
-  #hi-fi-wireframes .screen-grid,
-  #mobile-screens .image-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-sm);
-  }
-
-  #hi-fi-wireframes .screen-grid img,
-  #mobile-screens .image-grid img {
-    max-width: 90%;
-  }
+#mobile-screens h3 {
+  margin-bottom: 0;
+  margin-top: 0;
+  text-align: center;
 }
 
 /* =========================================================
@@ -992,17 +864,15 @@ main.site-width {
   text-align: left;
 }
 
+.before-after-insight .arrow img {
+  align-items: center;
+}
+
 /* ---- Responsive (Before/After) ---- */
 @media (max-width: 1024px) {
   .before-after-grid {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 0.75rem;
-  }
-
-  .before-after-grid .arrow img {
-    width: 64px;
-    align-self: center;
-    gap: 16px
   }
 
   .before-after-insight {
@@ -1019,6 +889,26 @@ main.site-width {
     text-align: left;
     list-style-position: inside;
   }
+
+  .before-after-insight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 1rem 0;
+  }
+
+  .before-after-insight img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+    width: 48px;
+    height: 48px;
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 700px) {
@@ -1034,11 +924,10 @@ main.site-width {
     align-content: center;
   }
 
-  .before-after-insight .arrow img {
+  .before-after-insight img {
     transform: rotate(90deg);
     width: 80px;
     height: 24px;
-    margin: var(--space-xs) auto;
     gap: 16px;
     align-self: center;
   }
@@ -1047,6 +936,196 @@ main.site-width {
     max-width: 90%;
   }
 }
+
+/* =========================================================
+   UNIVERSAL CAROUSEL SYSTEM
+   Desktop = grid, Tablet/Mobile = Owl Carousel
+========================================================= */
+
+/* Base wrapper */
+.carousel,
+.owl-carousel {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+  box-sizing: border-box;
+}
+
+/* Base stage (Owl only) */
+.owl-stage {
+  display: flex;
+  align-items: stretch;
+}
+
+.owl-item {
+  display: flex;
+  justify-content: center;
+}
+
+/* Base figure & caption */
+.owl-carousel figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.owl-carousel figcaption {
+  margin-top: 0.5rem;
+  text-align: center;
+  color: var(--color-text);
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-weight: 500;
+}
+
+/* =========================================================
+   DESKTOP ≥ 1200px — GRID LAYOUT (no carousel, no arrows)
+========================================================= */
+@media (min-width: 1200px) {
+
+  .owl-carousel,
+  .carousel {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+  }
+
+  .owl-nav,
+  .owl-dots {
+    display: none !important;
+  }
+
+  .owl-item,
+  .owl-stage,
+  .owl-stage-outer {
+    display: contents !important;
+  }
+
+  /* Images scale nicely in 3-column layout */
+  .owl-carousel img,
+  .carousel img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+  }
+}
+
+/* =========================================================
+   TABLET 768–1199px — Owl Carousel (2 visible)
+========================================================= */
+@media (min-width: 768px) and (max-width: 1199px) {
+
+  .owl-carousel,
+  .carousel {
+    display: block !important;
+  }
+
+  .owl-carousel img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  /* Arrows */
+  .owl-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: var(--space-sm);
+  }
+
+  .owl-nav button {
+    background: var(--color-primary);
+    color: var(--color-surface);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+
+  .owl-nav button:hover {
+    background: var(--color-accent);
+    transform: translateY(-2px);
+  }
+
+  /* Dots */
+  .owl-dots {
+    margin-top: var(--space-xs);
+    text-align: center;
+  }
+
+  .owl-dots .owl-dot span {
+    background: rgba(20, 30, 70, 0.2);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 4px;
+  }
+
+  .owl-dots .owl-dot.active span {
+    background: var(--color-primary);
+  }
+}
+
+/* =========================================================
+   MOBILE < 768px — Owl Carousel (1 visible)
+========================================================= */
+@media (max-width: 767px) {
+
+  .owl-carousel,
+  .carousel {
+    display: block !important;
+  }
+
+  .owl-carousel img {
+    width: 100%;
+    max-width: 90%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  /* Arrows */
+  .owl-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: var(--space-sm);
+  }
+
+  .owl-nav button {
+    background: var(--color-primary);
+    color: var(--color-surface);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  /* Dots */
+  .owl-dots {
+    margin-top: var(--space-xs);
+    text-align: center;
+  }
+
+  .owl-dots .owl-dot span {
+    background: rgba(20, 30, 70, 0.2);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 4px;
+  }
+
+  .owl-dots .owl-dot.active span {
+    background: var(--color-primary);
+  }
+}
+
 
 /* =========================================================
    UNIVERSAL IMAGE DISPLAY
@@ -1135,7 +1214,7 @@ footer.site-footer {
 
   .hero,
   .about-hero,
-  .screen-row,
+  .carousel,
   .lowfi-grid,
   .insights {
     grid-template-columns: 1fr;
