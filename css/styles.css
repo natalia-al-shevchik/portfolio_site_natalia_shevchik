@@ -496,6 +496,11 @@ main.site-width {
   text-underline-offset: 2px;
 }
 
+.navigation a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 /* =========================================================
    ABOUT PAGE
    ========================================================= */
