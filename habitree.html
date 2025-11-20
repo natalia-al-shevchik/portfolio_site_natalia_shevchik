@@ -18,6 +18,7 @@
     />
     <link rel="stylesheet" href="css/owl.carousel.css" />
     <link rel="stylesheet" href="css/owl.theme.default.css" />
+    <link href="css/lightbox.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
     <script
       src="https://kit.fontawesome.com/0b931f4725.js"
@@ -196,59 +197,81 @@
           </p>
         </div>
         <figure class="user-flow">
-          <picture>
-            <source
-              srcset="./images/habitree/habitree_flow-new-user-small.png"
-              media="(max-width:767px)"
-            />
-            <source
-              srcset="./images/habitree/habitree_flow-new-user-medium.png"
-              media="(max-width:1199px)"
-            />
-            <img
-              src="./images/habitree/habitree_flow-new-user-large.png"
-              alt="new user flow"
-              loading="lazy"
-            />
-          </picture>
+          <a
+            href="./images/habitree/habitree_flow-new-user-large.png"
+            data-lightbox="habitree-flows"
+            data-title="Habitree UX Flow — New User"
+          >
+            <picture>
+              <source
+                srcset="./images/habitree/habitree_flow-new-user-small.png"
+                media="(max-width:767px)"
+              />
+              <source
+                srcset="./images/habitree/habitree_flow-new-user-medium.png"
+                media="(max-width:1199px)"
+              />
+              <img
+                src="./images/habitree/habitree_flow-new-user-large.png"
+                alt="new user flow"
+                loading="lazy"
+              />
+            </picture>
+          </a>
           <figcaption>Habitree UX Flow — New User</figcaption>
         </figure>
 
         <figure class="user-flow">
-          <picture>
-            <source
-              srcset="./images/habitree/habitree_flow-returning-user-small.png"
-              media="(max-width:767px)"
-            />
-            <source
-              srcset="./images/habitree/habitree_flow-returning-user-medium.png"
-              media="(max-width:1199px)"
-            />
-            <img
-              src="./images/habitree/habitree_flow-returning-user-large.png"
-              alt="returning user flow"
-              loading="lazy"
-            />
-          </picture>
+          <a
+            href="./images/habitree/habitree_flow-new-user-large.png"
+            data-lightbox="habitree-flows"
+            data-title="Habitree UX Flow — Returning User"
+          >
+            <picture>
+              <source
+                srcset="
+                  ./images/habitree/habitree_flow-returning-user-small.png
+                "
+                media="(max-width:767px)"
+              />
+              <source
+                srcset="
+                  ./images/habitree/habitree_flow-returning-user-medium.png
+                "
+                media="(max-width:1199px)"
+              />
+              <img
+                src="./images/habitree/habitree_flow-returning-user-large.png"
+                alt="returning user flow"
+                loading="lazy"
+              />
+            </picture>
+          </a>
           <figcaption>Habitree UX Flow — Returning User</figcaption>
         </figure>
 
         <figure class="user-flow">
-          <picture class="flow-image">
-            <source
-              srcset="./images/habitree/habitree_flow-add-habit-small.png"
-              media="(max-width:767px)"
-            />
-            <source
-              srcset="./images/habitree/habitree_flow-add-habit-medium.png"
-              media="(max-width:1199px)"
-            />
-            <img
-              src="./images/habitree/habitree_flow-add-habit-large.png"
-              alt="add habit flow"
-              loading="lazy"
-            />
-          </picture>
+          <a
+            href="./images/habitree/habitree_flow-new-user-large.png"
+            data-lightbox="habitree-flows"
+            data-title="Habitree UX Flow — Add Habit"
+          >
+            <picture class="flow-image">
+              <source
+                srcset="./images/habitree/habitree_flow-add-habit-small.png"
+                media="(max-width:767px)"
+              />
+              <source
+                srcset="./images/habitree/habitree_flow-add-habit-medium.png"
+                media="(max-width:1199px)"
+              />
+              <img
+                src="./images/habitree/habitree_flow-add-habit-large.png"
+                alt="add habit flow"
+                loading="lazy"
+              />
+            </picture>
+          </a>
           <figcaption>Habitree UX Flow — Add Habit</figcaption>
         </figure>
       </section>
@@ -615,6 +638,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/owl.carousel.js"></script>
+    <script src="js/lightbox.js"></script>
     <script src="js/scripts.js"></script>
   </body>
 </html>

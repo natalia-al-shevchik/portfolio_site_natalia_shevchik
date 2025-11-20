@@ -706,27 +706,10 @@ main.site-width {
   box-sizing: border-box;
 }
 
-/* Tablet breakpoint */
+/* Tablet/mobile breakpoint */
 @media (max-width: 1024px) {
-  .mockup figcaption {
-    bottom: 12%;
-    font-size: clamp(1.1rem, 4vw, 1.8rem);
-  }
-}
-
-/* Mobile breakpoint */
-@media (max-width: 767px) {
-  .mockup figcaption {
-    bottom: 20%;
-    font-size: clamp(1rem, 5vw, 1.5rem);
-    padding: 0.3em 0.8em;
-  }
-}
-
-@media (max-width: 600px) {
-  .mockup figcaption {
-    font-size: 1rem;
-    bottom: 5%;
+  .mockup {
+    display: none;
   }
 }
 
