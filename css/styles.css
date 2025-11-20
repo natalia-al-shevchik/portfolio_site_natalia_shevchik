@@ -491,6 +491,11 @@ main.site-width {
   color: var(--color-surface);
 }
 
+#prototyping a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 /* =========================================================
    ABOUT PAGE
    ========================================================= */
