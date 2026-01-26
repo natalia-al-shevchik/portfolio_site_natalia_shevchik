@@ -15,20 +15,31 @@ window.addEventListener("load", () => {
 
   const splashShown = sessionStorage.getItem("splashShown");
 
-  if (splashShown) {
-    splash.remove();
-  } else {
-    // fade out after defined duration
-    setTimeout(() => {
-      splash.classList.add("hidden");
-      sessionStorage.setItem("splashShown", "true");
-    }, splashDuration);
-
-    // remove from DOM after fade completes
-    splash.addEventListener("transitionend", (e) => {
-      if (e.propertyName === "opacity") splash.remove();
-    });
+  const scrollToHash = () => {
+  if (window.location.hash) {
+    const el = document.querySelector(window.location.hash);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
   }
+};
+
+if (splashShown) {
+  splash.remove();
+  scrollToHash(); // scroll immediately if splash was already shown
+} else {
+  // fade out after defined duration
+  setTimeout(() => {
+    splash.classList.add("hidden");
+    sessionStorage.setItem("splashShown", "true");
+  }, splashDuration);
+
+  // remove from DOM after fade completes
+  splash.addEventListener("transitionend", (e) => {
+    if (e.propertyName === "opacity") {
+      splash.remove();
+      scrollToHash(); // scroll after splash fade finishes
+    }
+  });
+}
 });
 
 /* =======================================================
@@ -122,3 +133,52 @@ window.addEventListener("load", () => {
 
   $(document).ready(initOrDestroyOtherCarousels);
 })(jQuery);
+
+/* ========== HERO TYPING EFFECT ========== */
+document.addEventListener("DOMContentLoaded", () => {
+  const el = document.querySelector(".skill");
+  if (!el) return;
+
+  const phrases = [
+    "user-centered, accessible digital products",
+    "clear and thoughtful interface design",
+    "research-driven UX and prototyping"
+  ];
+
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const typingSpeed = 80;     // ms per character
+  const deletingSpeed = 40;   // ms per character
+  const pauseAfterTyping = 1600;
+  const pauseAfterDeleting = 400;
+
+  function type() {
+    const currentPhrase = phrases[phraseIndex];
+
+    if (!isDeleting) {
+      el.textContent = currentPhrase.slice(0, charIndex + 1);
+      charIndex++;
+
+      if (charIndex === currentPhrase.length) {
+        setTimeout(() => (isDeleting = true), pauseAfterTyping);
+      }
+    } else {
+      el.textContent = currentPhrase.slice(0, charIndex - 1);
+      charIndex--;
+
+      if (charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        setTimeout(() => {}, pauseAfterDeleting);
+      }
+    }
+
+    const speed = isDeleting ? deletingSpeed : typingSpeed;
+    setTimeout(type, speed);
+  }
+
+  type();
+});
+
+

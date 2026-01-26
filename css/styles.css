@@ -350,6 +350,46 @@ main.site-width {
   margin: 0 auto;
 }
 
+.hero-focus {
+  margin-bottom: var(--space-xxs);
+}
+
+.skill-slider {
+  display: inline-block;
+  min-height: 1.4em; /* keeps vertical space stable */
+  margin-top: 0.2rem;
+}
+
+.skill {
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: var(--color-accent);
+  white-space: nowrap;
+}
+
+/* Blinking underscore */
+.skill::after {
+  content: "_";
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s step-start infinite;
+  color: #141E46;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .skill::after {
+    animation: none;
+  }
+}
+
+
+
 /* =========================================================
    PROJECT GRID / CARDS
    ========================================================= */
@@ -1218,6 +1258,18 @@ footer.site-footer {
   #about-photo img,
   #about-logo img {
     max-width: 300px;
+  }
+
+
+  .hero-focus {
+    max-width: 32ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .skill-slider {
+    display: block;
+    margin: 0.25rem auto 0;
   }
 }
 
