@@ -366,7 +366,7 @@ main.site-width {
   height: auto;
   border-radius: 4px;
   display: block;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .hero-focus {
@@ -1293,18 +1293,20 @@ footer.site-footer {
     text-align: start;
   }
 
+  .homepage {
+    text-align: start;
+  }
+
   .hero-photo img,
   #about-photo img,
   #about-logo img {
-    max-width: 300px;
+    max-width: 240px;
   }
 
 
   .hero-focus {
-    max-width: 32ch;
-    margin-left: auto;
     margin-right: auto;
-    font-size: small;
+    margin-left: auto;
   }
 
   .skill-slider {
