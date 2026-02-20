@@ -117,8 +117,6 @@ a:selection {
 p {
   max-width: 120ch;
   text-align: left;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .text-container {
@@ -320,16 +318,37 @@ main.site-width {
 /* =========================================================
    HERO SECTION
    ========================================================= */
-.hero {
+.homepage {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+@media (max-width: 1200px) {
+  .homepage {
+    grid-template-columns: 2fr 1.3fr;
+    gap: 3rem;
+  }
+}
+
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: calc(var(--header-height) + 20px);
   gap: 2rem;
-  align-items: center;
-  margin: var(--space-lg) 0;
+}
+
+.hero-focus {
+  text-align: left;
+  margin-bottom: 0.5rem;
 }
 
 .hero h1 {
   font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .hero p.lead {
@@ -352,11 +371,14 @@ main.site-width {
 
 .hero-focus {
   margin-bottom: var(--space-xxs);
+  max-width: 100%;
 }
 
 .skill-slider {
+  max-width: 100%;
   display: inline-block;
-  min-height: 1.4em; /* keeps vertical space stable */
+  min-height: 1.4em;
+  /* keeps vertical space stable */
   margin-top: 0.2rem;
 }
 
@@ -364,7 +386,8 @@ main.site-width {
   font-weight: 500;
   font-size: 1.6rem;
   color: var(--color-accent);
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
 }
 
 /* Blinking underscore */
@@ -377,8 +400,17 @@ main.site-width {
 }
 
 @keyframes blink {
-  0%, 50%, 100% { opacity: 1; }
-  25%, 75% { opacity: 0; }
+
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
 }
 
 /* Accessibility */
@@ -388,16 +420,30 @@ main.site-width {
   }
 }
 
+@media (max-width: 767px) {
+  .hero {
+    position: static;
+  }
+  .homepage {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  .hero-focus {
+    padding: 0;
+    text-align: start;
+}
+}
+
 
 
 /* =========================================================
    PROJECT GRID / CARDS
    ========================================================= */
-.projects-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  margin: var(--space-lg) 0;
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin: var(--space-md) 0;
 }
 
 .project {
@@ -408,6 +454,7 @@ main.site-width {
   display: flex;
   flex-direction: column;
   min-height: 520px;
+  text-align: left;
 }
 
 .project img {
@@ -913,7 +960,9 @@ main.site-width {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: left;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 1rem 0;
   }
 
   .before-after-insight ul {
@@ -921,16 +970,6 @@ main.site-width {
     padding: 0;
     text-align: left;
     list-style-position: inside;
-  }
-
-  .before-after-insight {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 0.5rem;
-    padding: 1rem 0;
   }
 
   .before-after-insight img {
@@ -1251,7 +1290,7 @@ footer.site-footer {
   .lowfi-grid,
   .insights {
     grid-template-columns: 1fr;
-    text-align: center;
+    text-align: start;
   }
 
   .hero-photo img,
@@ -1265,6 +1304,7 @@ footer.site-footer {
     max-width: 32ch;
     margin-left: auto;
     margin-right: auto;
+    font-size: small;
   }
 
   .skill-slider {
