@@ -369,6 +369,10 @@ main.site-width {
   margin: 0;
 }
 
+.bio p, .hero-focus p {
+  margin-top: 0.5rem;
+}
+
 .hero-focus {
   margin-bottom: var(--space-xxs);
   max-width: 100%;
@@ -433,7 +437,6 @@ main.site-width {
     text-align: start;
 }
 }
-
 
 
 /* =========================================================
@@ -578,6 +581,21 @@ main.site-width {
   color: var(--color-surface);
 }
 
+.btn--ghost {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: 8px;
+  font-weight: 700;
+  width: auto;
+  padding: var(--space-sm) var(--space-md);
+}
+
+.btn--ghost:hover {
+  background: var(--color-primary);
+  color: var(--color-surface);
+}
+
 #prototyping a {
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -657,6 +675,8 @@ main.site-width {
   font-size: 0.95rem;
   padding: var(--space-xs) var(--space-sm);
 }
+
+
 
 /* ---- Responsive (About) ---- */
 @media (max-width: 900px) {
