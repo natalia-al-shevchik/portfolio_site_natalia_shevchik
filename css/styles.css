@@ -1391,6 +1391,12 @@ footer.site-footer {
   display: block;
 }
 
+.annotated-container .base-image {
+  display: flex;
+  max-width: 1200px;
+  align-content: center;
+}
+
 /* --- Style Guide: Colors Section --- */
 .colors-section,
 .typography-section,
