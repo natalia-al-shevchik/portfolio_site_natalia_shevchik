@@ -11,7 +11,7 @@
   --color-text: #333333;
 
   /* ---- Layout ---- */
-  --max-width: 1440px;
+  --max-width: 1000px;
   --header-height: 80px;
 
   /* ---- Spacing scale ---- */
@@ -752,7 +752,7 @@ main.site-width {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   max-width: 120ch;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 0.2rem;
   margin: 2rem auto;
   text-align: center;
 }
@@ -760,12 +760,13 @@ main.site-width {
 .problem-grid .arrow,
 .understanding-problem .arrow {
   justify-self: center;
-  width: 80px;
+  width: 60px;
 }
 
 .problem-grid .arrow img,
 .understanding-problem .arrow img {
-  width: 80px;
+  width: 60px;
+  padding-top: 1rem;
 }
 
 @media (max-width: 900px) {
