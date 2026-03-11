@@ -115,12 +115,12 @@ a:selection {
 }
 
 p {
-  max-width: 120ch;
+  max-width: 85ch;
   text-align: left;
 }
 
 .text-container {
-  max-width: 120ch;
+  max-width: 85ch;
   margin-left: 0;
   margin-right: 0;
   text-align: left;
@@ -719,8 +719,8 @@ main.site-width {
 }
 
 #project-cover img {
-  width: 90%;
-  max-width: 960px;
+  width: 100%;
+  max-width: 1000px;
   height: auto;
   display: block;
   margin: 2rem auto;
