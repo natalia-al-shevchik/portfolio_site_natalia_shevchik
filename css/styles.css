@@ -1394,7 +1394,7 @@ footer.site-footer {
 
 .annotated-container .base-image {
   display: flex;
-  max-width: 1200px;
+  max-width: 1000px;
   align-content: center;
 }
 
@@ -1528,12 +1528,14 @@ footer.site-footer {
 
 /* --- Feedback Section (Testimonials) --- */
 .feedback-carousel {
-  margin: 2rem auto;
+  align-self: center;
+  margin: 0.5rem auto;
 }
 
 .testimonial {
   text-align: center;
-  padding: 2rem;
+  min-width: 300px;
+  padding: 0.1rem;
 }
 
 .testimonial blockquote {
@@ -1589,6 +1591,7 @@ footer.site-footer {
   }
 
   .homepage {
+    min-width: 1200px;
     text-align: start;
   }
 
